@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Repair</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 16px; color: #fff; }
+      .title { font-weight: 600; margin-bottom: 12px; }
+      button { padding: 10px 14px; border-radius: 8px; border: 1px solid #666; background: transparent; color: #fff; cursor: pointer; }
+      .ok { color: #9f9; margin-top: 12px; }
+      .err { color: #f99; margin-top: 12px; }
+    </style>
+    <script src="/homey.js"></script>
+  </head>
+  <body>
+    <div class="title">Fix Energy visibility</div>
+    <p>This will ensure the device is included in the Energy tab and not excluded.</p>
+    <button id="fix">Run repair</button>
+    <div id="msg"></div>
+    <script>
+      function onHomeyReady(Homey) {
+        const btn = document.getElementById('fix');
+        const msg = document.getElementById('msg');
+        btn.addEventListener('click', async () => {
+          btn.disabled = true;
+          msg.textContent = 'Repair in progress…';
+          try {
+            await Homey.emit('repair_fix');
+            msg.textContent = 'Done. You can close this dialog.';
+            msg.className = 'ok';
+            await Homey.done();
+          } catch(e) {
+            msg.textContent = 'Failed: ' + (e && e.message ? e.message : e);
+            msg.className = 'err';
+          } finally {
+            btn.disabled = false;
+          }
+        });
+        Homey.ready();
+      }
+    </script>
+  </body>
+</html>

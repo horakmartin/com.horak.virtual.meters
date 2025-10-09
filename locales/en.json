@@ -1,0 +1,32 @@
+{
+  "driver": {
+    "gasmeter": {
+      "name": "Virtual Gas Meter"
+    },
+    "watermeter": {
+      "name": "Virtual Water Meter"
+    }
+  },
+  "flow": {
+    "actions": {
+      "set_gas_abs": {
+        "title": "Set gas meter to…"
+      },
+      "add_gas_delta": {
+        "title": "Increase gas meter by…"
+      },
+      "reset_gas": {
+        "title": "Reset gas meter to 0"
+      },
+      "set_water_abs": {
+        "title": "Set water meter to…"
+      },
+      "add_water_delta": {
+        "title": "Increase water meter by…"
+      },
+      "reset_water": {
+        "title": "Reset water meter to 0"
+      }
+    }
+  }
+}

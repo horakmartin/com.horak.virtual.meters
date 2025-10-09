@@ -1,0 +1,32 @@
+{
+  "driver": {
+    "gasmeter": {
+      "name": "Virtuální plynoměr"
+    },
+    "watermeter": {
+      "name": "Virtuální vodoměr"
+    }
+  },
+  "flow": {
+    "actions": {
+      "set_gas_abs": {
+        "title": "Nastavit plynoměr na…"
+      },
+      "add_gas_delta": {
+        "title": "Zvýšit plynoměr o…"
+      },
+      "reset_gas": {
+        "title": "Vynulovat plynoměr"
+      },
+      "set_water_abs": {
+        "title": "Nastavit vodoměr na…"
+      },
+      "add_water_delta": {
+        "title": "Zvýšit vodoměr o…"
+      },
+      "reset_water": {
+        "title": "Vynulovat vodoměr"
+      }
+    }
+  }
+}

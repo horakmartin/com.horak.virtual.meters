@@ -1,0 +1,257 @@
+{
+  "id": "com.horak.virtual.meters",
+  "name": {
+    "en": "Virtual Gas & Water Meters",
+    "cs": "Virtuální plynoměr a vodoměr"
+  },
+  "description": {
+    "en": "Simple virtual cumulative gas & water meters for Homey Energy.",
+    "cs": "Jednoduché virtuální kumulativní měřiče plynu a vody pro Homey Energy."
+  },
+  "version": "1.0.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "category": "energy",
+  "author": "Martin Horak",
+  "brandColor": "#FF0000",
+  "permissions": [],
+  "flow": {
+    "actions": [
+      {
+        "id": "set_gas_abs",
+        "title": {
+          "en": "Set gas meter to…",
+          "cs": "Nastavit plynoměr na…"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=gasmeter"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value (m³)",
+              "cs": "Hodnota (m³)"
+            },
+            "min": 0
+          }
+        ],
+        "titleFormatted": {
+          "en": "Set meter to [[value]] m³",
+          "cs": "Nastavit měřič na [[value]] m³"
+        }
+      },
+      {
+        "id": "add_gas_delta",
+        "title": {
+          "en": "Increase gas meter by…",
+          "cs": "Zvýšit plynoměr o…"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=gasmeter"
+          },
+          {
+            "name": "delta",
+            "type": "number",
+            "title": {
+              "en": "Delta (m³)",
+              "cs": "Přírůstek (m³)"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Increase meter by [[delta]] m³",
+          "cs": "Zvýšit měřič o [[delta]] m³"
+        }
+      },
+      {
+        "id": "reset_gas",
+        "title": {
+          "en": "Reset gas meter to 0",
+          "cs": "Vynulovat plynoměr"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=gasmeter"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Reset meter",
+          "cs": "Vynulovat měřič"
+        }
+      },
+      {
+        "id": "set_water_abs",
+        "title": {
+          "en": "Set water meter to…",
+          "cs": "Nastavit vodoměr na…"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=watermeter"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value (m³)",
+              "cs": "Hodnota (m³)"
+            },
+            "min": 0
+          }
+        ],
+        "titleFormatted": {
+          "en": "Set meter to [[value]] m³",
+          "cs": "Nastavit měřič na [[value]] m³"
+        }
+      },
+      {
+        "id": "add_water_delta",
+        "title": {
+          "en": "Increase water meter by…",
+          "cs": "Zvýšit vodoměr o…"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=watermeter"
+          },
+          {
+            "name": "delta",
+            "type": "number",
+            "title": {
+              "en": "Delta (m³)",
+              "cs": "Přírůstek (m³)"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Increase meter by [[delta]] m³",
+          "cs": "Zvýšit měřič o [[delta]] m³"
+        }
+      },
+      {
+        "id": "reset_water",
+        "title": {
+          "en": "Reset water meter to 0",
+          "cs": "Vynulovat vodoměr"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=watermeter"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Reset meter",
+          "cs": "Vynulovat měřič"
+        }
+      }
+    ]
+  },
+  "icon": "assets/icon.svg",
+  "drivers": [
+    {
+      "id": "gasmeter",
+      "name": {
+        "en": "Virtual Gas Meter",
+        "cs": "Virtuální plynoměr"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "meter_gas"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "exclude_from_energy",
+          "type": "checkbox",
+          "label": {
+            "en": "Exclude from Energy",
+            "cs": "Vyloučit z Energie"
+          },
+          "hint": {
+            "en": "Hide this device from the Energy tab. You can enable it again later.",
+            "cs": "Skryje zařízení ze záložky Energie. Kdykoli můžete znovu povolit."
+          },
+          "value": false
+        }
+      ],
+      "images": {
+        "small": "drivers/gasmeter/assets/images/small.png",
+        "large": "drivers/gasmeter/assets/images/large.png"
+      }
+    },
+    {
+      "id": "watermeter",
+      "name": {
+        "en": "Virtual Water Meter",
+        "cs": "Virtuální vodoměr"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "meter_water"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "id": "exclude_from_energy",
+          "type": "checkbox",
+          "label": {
+            "en": "Exclude from Energy",
+            "cs": "Vyloučit z Energie"
+          },
+          "hint": {
+            "en": "Hide this device from the Energy tab. You can enable it again later.",
+            "cs": "Skryje zařízení ze záložky Energie. Kdykoli můžete znovu povolit."
+          },
+          "value": false
+        }
+      ],
+      "images": {
+        "small": "drivers/watermeter/assets/images/small.png",
+        "large": "drivers/watermeter/assets/images/large.png"
+      }
+    }
+  ],
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  }
+}
