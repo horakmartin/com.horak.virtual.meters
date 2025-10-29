@@ -8,7 +8,7 @@
     "en": "Simple virtual cumulative gas & water meters for Homey Energy.",
     "cs": "Jednoduché virtuální kumulativní měřiče plynu a vody pro Homey Energy."
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "category": "energy",

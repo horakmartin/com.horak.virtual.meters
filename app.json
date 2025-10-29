@@ -9,7 +9,7 @@
     "en": "Simple virtual cumulative gas & water meters for Homey Energy.",
     "cs": "Jednoduché virtuální kumulativní měřiče plynu a vody pro Homey Energy."
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "category": "energy",
@@ -21,6 +21,25 @@
     "small": "assets/images/small.png",
     "large": "assets/images/large.png"
   },
+  "tags": {
+    "en": [
+      "energy",
+      "water",
+      "gas",
+      "meter",
+      "virtual"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "bugs": {
+    "url": "https://github.com/horakmartin/com.horak.virtual.meters/issues"
+  },
+  "source": "https://github.com/horakmartin/com.horak.virtual.meters/",
+  "support": "https://github.com/horakmartin/com.horak.virtual.meters/issues",
+  "homepage": "https://github.com/horakmartin/com.horak.virtual.meters/",
+  "homeyCommunityTopicId": 143890,
   "flow": {
     "actions": [
       {

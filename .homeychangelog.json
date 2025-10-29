@@ -7,5 +7,8 @@
   },
   "1.0.2": {
     "en": "Migrate water impulse from m3 to liter"
+  },
+  "1.0.3": {
+    "en": "Code reviewing"
   }
 }
