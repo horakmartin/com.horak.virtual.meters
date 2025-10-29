@@ -22,10 +22,20 @@ class WaterMeterDriver extends Homey.Driver {
         if (!device.hasCapability(cap)) {
           await device.addCapability(cap);
         }
-        // Poke value
-        const cur = device.getCapabilityValue(cap);
-        if (cur == null || Number(cur) === 0) {
-          await device.setCapabilityValue(cap, 0.001);
+        try {
+          await device.setCapabilityOptions(cap, {
+            units: { en: 'm3', cs: 'm3' },
+            decimals: 3,
+          });
+        } catch (e) {
+          this.homey.app.log('repair capability options failed:', e && e.message ? e.message : e);
+        }
+        // Poke value (1 liter) so Energy picks it up
+        const curM3 = Number(device.getCapabilityValue(cap));
+        if (curM3 == null || Number.isNaN(curM3) || curM3 === 0) {
+          await device.setMeterAbs(cap, 1);
+        } else {
+          await device.addMeterDelta(cap, 1);
         }
         return true;
       } catch (e) {

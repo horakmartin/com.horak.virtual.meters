@@ -104,15 +104,15 @@
             "name": "value",
             "type": "number",
             "title": {
-              "en": "Value (m³)",
-              "cs": "Hodnota (m³)"
+              "en": "Value (L)",
+              "cs": "Hodnota (l)"
             },
             "min": 0
           }
         ],
         "titleFormatted": {
-          "en": "Set meter to [[value]] m³",
-          "cs": "Nastavit měřič na [[value]] m³"
+          "en": "Set meter to [[value]] L",
+          "cs": "Nastavit vodomer na [[value]] l"
         }
       },
       {
@@ -131,14 +131,14 @@
             "name": "delta",
             "type": "number",
             "title": {
-              "en": "Delta (m³)",
-              "cs": "Přírůstek (m³)"
+              "en": "Delta (L)",
+              "cs": "Prirustek (l)"
             }
           }
         ],
         "titleFormatted": {
-          "en": "Increase meter by [[delta]] m³",
-          "cs": "Zvýšit měřič o [[delta]] m³"
+          "en": "Increase meter by [[delta]] L",
+          "cs": "Zvysit meric o [[delta]] l"
         }
       },
       {
@@ -255,3 +255,11 @@
     "large": "assets/images/large.png"
   }
 }
+
+
+
+
+
+
+
+
