@@ -1,4 +1,5 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.horak.virtual.meters",
   "name": {
     "en": "Virtual Gas & Water Meters",
@@ -15,40 +16,18 @@
   "author": "Martin Horak",
   "brandColor": "#FF0000",
   "permissions": [],
+  "icon": "assets/icon.svg",
+  "images": {
+    "small": "assets/images/small.png",
+    "large": "assets/images/large.png"
+  },
   "flow": {
     "actions": [
       {
-        "id": "set_gas_abs",
-        "title": {
-          "en": "Set gas meter to…",
-          "cs": "Nastavit plynoměr na…"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=gasmeter"
-          },
-          {
-            "name": "value",
-            "type": "number",
-            "title": {
-              "en": "Value (m³)",
-              "cs": "Hodnota (m³)"
-            },
-            "min": 0
-          }
-        ],
-        "titleFormatted": {
-          "en": "Set meter to [[value]] m³",
-          "cs": "Nastavit měřič na [[value]] m³"
-        }
-      },
-      {
         "id": "add_gas_delta",
         "title": {
-          "en": "Increase gas meter by…",
-          "cs": "Zvýšit plynoměr o…"
+          "en": "Increase gas meter by",
+          "cs": "Zvýšit plynoměr o"
         },
         "args": [
           {
@@ -60,14 +39,40 @@
             "name": "delta",
             "type": "number",
             "title": {
-              "en": "Delta (m³)",
-              "cs": "Přírůstek (m³)"
+              "en": "Delta (m3)",
+              "cs": "Přírůstek (m3)"
             }
           }
         ],
         "titleFormatted": {
-          "en": "Increase meter by [[delta]] m³",
-          "cs": "Zvýšit měřič o [[delta]] m³"
+          "en": "Increase meter by [[delta]] m3",
+          "cs": "Zvýšit měřič o [[delta]] m3"
+        }
+      },
+      {
+        "id": "add_water_delta",
+        "title": {
+          "en": "Increase water meter by",
+          "cs": "Zvýšit vodoměr o"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=watermeter"
+          },
+          {
+            "name": "delta",
+            "type": "number",
+            "title": {
+              "en": "Delta (L)",
+              "cs": "Přírůstek (l)"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Increase meter by [[delta]] L",
+          "cs": "Zvýšit měřič o [[delta]] l"
         }
       },
       {
@@ -89,10 +94,55 @@
         }
       },
       {
+        "id": "reset_water",
+        "title": {
+          "en": "Reset water meter to 0",
+          "cs": "Vynulovat vodoměr"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=watermeter"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Reset meter",
+          "cs": "Vynulovat měřič"
+        }
+      },
+      {
+        "id": "set_gas_abs",
+        "title": {
+          "en": "Set gas meter to",
+          "cs": "Nastavit plynoměr na"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=gasmeter"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value (m3)",
+              "cs": "Hodnota (m3)"
+            },
+            "min": 0
+          }
+        ],
+        "titleFormatted": {
+          "en": "Set meter to [[value]] m3",
+          "cs": "Nastavit měřič na [[value]] m3"
+        }
+      },
+      {
         "id": "set_water_abs",
         "title": {
-          "en": "Set water meter to…",
-          "cs": "Nastavit vodoměr na…"
+          "en": "Set water meter to",
+          "cs": "Nastavit vodoměr na"
         },
         "args": [
           {
@@ -114,54 +164,9 @@
           "en": "Set meter to [[value]] L",
           "cs": "Nastavit vodomer na [[value]] l"
         }
-      },
-      {
-        "id": "add_water_delta",
-        "title": {
-          "en": "Increase water meter by…",
-          "cs": "Zvýšit vodoměr o…"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=watermeter"
-          },
-          {
-            "name": "delta",
-            "type": "number",
-            "title": {
-              "en": "Delta (L)",
-              "cs": "Prirustek (l)"
-            }
-          }
-        ],
-        "titleFormatted": {
-          "en": "Increase meter by [[delta]] L",
-          "cs": "Zvysit meric o [[delta]] l"
-        }
-      },
-      {
-        "id": "reset_water",
-        "title": {
-          "en": "Reset water meter to 0",
-          "cs": "Vynulovat vodoměr"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=watermeter"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Reset meter",
-          "cs": "Vynulovat měřič"
-        }
       }
     ]
   },
-  "icon": "assets/icon.svg",
   "drivers": [
     {
       "id": "gasmeter",
@@ -204,6 +209,9 @@
       "images": {
         "small": "drivers/gasmeter/assets/images/small.png",
         "large": "drivers/gasmeter/assets/images/large.png"
+      },
+      "energy": {
+        "cumulative": true
       }
     },
     {
@@ -247,19 +255,10 @@
       "images": {
         "small": "drivers/watermeter/assets/images/small.png",
         "large": "drivers/watermeter/assets/images/large.png"
+      },
+      "energy": {
+        "cumulative": true
       }
     }
-  ],
-  "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png"
-  }
+  ]
 }
-
-
-
-
-
-
-
-

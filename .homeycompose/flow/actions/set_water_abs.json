@@ -1,0 +1,27 @@
+{
+  "id": "set_water_abs",
+  "title": {
+    "en": "Set water meter to",
+    "cs": "Nastavit vodom\u011br na"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=watermeter"
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Value (L)",
+        "cs": "Hodnota (l)"
+      },
+      "min": 0
+    }
+  ],
+  "titleFormatted": {
+    "en": "Set meter to [[value]] L",
+    "cs": "Nastavit vodomer na [[value]] l"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "add_gas_delta",
+  "title": {
+    "en": "Increase gas meter by",
+    "cs": "Zv\u00fd\u0161it plynom\u011br o"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=gasmeter"
+    },
+    {
+      "name": "delta",
+      "type": "number",
+      "title": {
+        "en": "Delta (m3)",
+        "cs": "P\u0159\u00edr\u016fstek (m3)"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Increase meter by [[delta]] m3",
+    "cs": "Zv\u00fd\u0161it m\u011b\u0159i\u010d o [[delta]] m3"
+  }
+}

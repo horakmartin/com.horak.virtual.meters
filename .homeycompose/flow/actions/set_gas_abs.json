@@ -1,0 +1,27 @@
+{
+  "id": "set_gas_abs",
+  "title": {
+    "en": "Set gas meter to",
+    "cs": "Nastavit plynom\u011br na"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=gasmeter"
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Value (m3)",
+        "cs": "Hodnota (m3)"
+      },
+      "min": 0
+    }
+  ],
+  "titleFormatted": {
+    "en": "Set meter to [[value]] m3",
+    "cs": "Nastavit m\u011b\u0159i\u010d na [[value]] m3"
+  }
+}

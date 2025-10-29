@@ -1,0 +1,26 @@
+{
+  "id": "add_water_delta",
+  "title": {
+    "en": "Increase water meter by",
+    "cs": "Zv\u00fd\u0161it vodom\u011br o"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=watermeter"
+    },
+    {
+      "name": "delta",
+      "type": "number",
+      "title": {
+        "en": "Delta (L)",
+        "cs": "P\u0159\u00edr\u016fstek (l)"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Increase meter by [[delta]] L",
+    "cs": "Zv\u00fd\u0161it m\u011b\u0159i\u010d o [[delta]] l"
+  }
+}

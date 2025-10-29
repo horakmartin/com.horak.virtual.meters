@@ -1,10 +1,8 @@
-Virtual Gas & Water Meters
-
 Virtual gas and water counters for Homey. Exposes cumulative meters (meter_gas, meter_water) so they appear in Homey Energy with history and Flow cards for setting/incrementing values.
 
 Features:
-- Virtual Gas meter (meter_gas, m3, cumulative)
-- Virtual Water meter (meter_water, m3 display; underlying storage syncs liters to Homey Energy)
+- Virtual Gas meter (meter_gas)
+- Virtual Water meter (meter_water)
 - Flow cards:
   - Set gas meter to: set absolute value (m3)
   - Increase gas meter by: add a delta (m3)
@@ -17,9 +15,6 @@ Features:
 
 Requirements:
 - Homey / Homey Pro (latest Homey app)
-
-Install (local dev/test):
-homey app install --path "C:\workspace\virtual-meters"
 
 Add a device:
 1) Devices  →  +  →  Virtual Gas & Water Meters
